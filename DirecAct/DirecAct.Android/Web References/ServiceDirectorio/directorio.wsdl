@@ -1,0 +1,357 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="Acceso">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strUsuario" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strPass" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AccesoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AccesoResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DatosAreas">
+        <s:complexType />
+      </s:element>
+      <s:element name="DatosAreasResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DatosAreasResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DatosFuncionarios">
+        <s:complexType />
+      </s:element>
+      <s:element name="DatosFuncionariosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DatosFuncionariosResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DatosFuncArea">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="idArea" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DatosFuncAreaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DatosFuncAreaResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DatosBusqAreas">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strArea" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DatosBusqAreasResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DatosBusqAreasResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConsultaNotificaciones">
+        <s:complexType />
+      </s:element>
+      <s:element name="ConsultaNotificacionesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ConsultaNotificacionesResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertaNotificacion">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strTexto" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strSender" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strReceiver" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertaNotificacionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="InsertaNotificacionResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="AccesoSoapIn">
+    <wsdl:part name="parameters" element="tns:Acceso" />
+  </wsdl:message>
+  <wsdl:message name="AccesoSoapOut">
+    <wsdl:part name="parameters" element="tns:AccesoResponse" />
+  </wsdl:message>
+  <wsdl:message name="DatosAreasSoapIn">
+    <wsdl:part name="parameters" element="tns:DatosAreas" />
+  </wsdl:message>
+  <wsdl:message name="DatosAreasSoapOut">
+    <wsdl:part name="parameters" element="tns:DatosAreasResponse" />
+  </wsdl:message>
+  <wsdl:message name="DatosFuncionariosSoapIn">
+    <wsdl:part name="parameters" element="tns:DatosFuncionarios" />
+  </wsdl:message>
+  <wsdl:message name="DatosFuncionariosSoapOut">
+    <wsdl:part name="parameters" element="tns:DatosFuncionariosResponse" />
+  </wsdl:message>
+  <wsdl:message name="DatosFuncAreaSoapIn">
+    <wsdl:part name="parameters" element="tns:DatosFuncArea" />
+  </wsdl:message>
+  <wsdl:message name="DatosFuncAreaSoapOut">
+    <wsdl:part name="parameters" element="tns:DatosFuncAreaResponse" />
+  </wsdl:message>
+  <wsdl:message name="DatosBusqAreasSoapIn">
+    <wsdl:part name="parameters" element="tns:DatosBusqAreas" />
+  </wsdl:message>
+  <wsdl:message name="DatosBusqAreasSoapOut">
+    <wsdl:part name="parameters" element="tns:DatosBusqAreasResponse" />
+  </wsdl:message>
+  <wsdl:message name="ConsultaNotificacionesSoapIn">
+    <wsdl:part name="parameters" element="tns:ConsultaNotificaciones" />
+  </wsdl:message>
+  <wsdl:message name="ConsultaNotificacionesSoapOut">
+    <wsdl:part name="parameters" element="tns:ConsultaNotificacionesResponse" />
+  </wsdl:message>
+  <wsdl:message name="InsertaNotificacionSoapIn">
+    <wsdl:part name="parameters" element="tns:InsertaNotificacion" />
+  </wsdl:message>
+  <wsdl:message name="InsertaNotificacionSoapOut">
+    <wsdl:part name="parameters" element="tns:InsertaNotificacionResponse" />
+  </wsdl:message>
+  <wsdl:portType name="DirectorioSoap">
+    <wsdl:operation name="Acceso">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Acceso</wsdl:documentation>
+      <wsdl:input message="tns:AccesoSoapIn" />
+      <wsdl:output message="tns:AccesoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DatosAreas">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Muestra la lista de áreas</wsdl:documentation>
+      <wsdl:input message="tns:DatosAreasSoapIn" />
+      <wsdl:output message="tns:DatosAreasSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DatosFuncionarios">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Muestra la lista de funcionarios</wsdl:documentation>
+      <wsdl:input message="tns:DatosFuncionariosSoapIn" />
+      <wsdl:output message="tns:DatosFuncionariosSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DatosFuncArea">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Funcionarios por area</wsdl:documentation>
+      <wsdl:input message="tns:DatosFuncAreaSoapIn" />
+      <wsdl:output message="tns:DatosFuncAreaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DatosBusqAreas">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Consultar por áreas</wsdl:documentation>
+      <wsdl:input message="tns:DatosBusqAreasSoapIn" />
+      <wsdl:output message="tns:DatosBusqAreasSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaNotificaciones">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Consultar notificaciones</wsdl:documentation>
+      <wsdl:input message="tns:ConsultaNotificacionesSoapIn" />
+      <wsdl:output message="tns:ConsultaNotificacionesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertaNotificacion">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Inserta notificación</wsdl:documentation>
+      <wsdl:input message="tns:InsertaNotificacionSoapIn" />
+      <wsdl:output message="tns:InsertaNotificacionSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="DirectorioSoap" type="tns:DirectorioSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Acceso">
+      <soap:operation soapAction="http://tempuri.org/Acceso" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DatosAreas">
+      <soap:operation soapAction="http://tempuri.org/DatosAreas" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DatosFuncionarios">
+      <soap:operation soapAction="http://tempuri.org/DatosFuncionarios" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DatosFuncArea">
+      <soap:operation soapAction="http://tempuri.org/DatosFuncArea" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DatosBusqAreas">
+      <soap:operation soapAction="http://tempuri.org/DatosBusqAreas" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaNotificaciones">
+      <soap:operation soapAction="http://tempuri.org/ConsultaNotificaciones" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertaNotificacion">
+      <soap:operation soapAction="http://tempuri.org/InsertaNotificacion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="DirectorioSoap12" type="tns:DirectorioSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Acceso">
+      <soap12:operation soapAction="http://tempuri.org/Acceso" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DatosAreas">
+      <soap12:operation soapAction="http://tempuri.org/DatosAreas" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DatosFuncionarios">
+      <soap12:operation soapAction="http://tempuri.org/DatosFuncionarios" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DatosFuncArea">
+      <soap12:operation soapAction="http://tempuri.org/DatosFuncArea" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DatosBusqAreas">
+      <soap12:operation soapAction="http://tempuri.org/DatosBusqAreas" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaNotificaciones">
+      <soap12:operation soapAction="http://tempuri.org/ConsultaNotificaciones" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertaNotificacion">
+      <soap12:operation soapAction="http://tempuri.org/InsertaNotificacion" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Directorio">
+    <wsdl:port name="DirectorioSoap" binding="tns:DirectorioSoap">
+      <soap:address location="http://132.248.80.146/ws/directorio.asmx" />
+    </wsdl:port>
+    <wsdl:port name="DirectorioSoap12" binding="tns:DirectorioSoap12">
+      <soap12:address location="http://132.248.80.146/ws/directorio.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

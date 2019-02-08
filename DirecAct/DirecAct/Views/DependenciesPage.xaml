@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage 
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="DirecAct.Views.DependenciesPage"
+    BindingContext="{Binding Main, Source={StaticResource Locator}}"
+    Title="Dependencias">
+    <ContentPage.Content>
+        <StackLayout
+            BindingContext="{Binding Dependence}"
+            >
+
+            <ListView 
+                RowHeight="160"
+                ItemsSource="{Binding Dependencias_list}"
+                IsPullToRefreshEnabled="True"
+                IsRefreshing="{Binding IsRefreshing, Mode=TwoWay}"
+                RefreshCommand="{Binding RefreshCommand}"
+                >
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+
+                            <Frame
+                                BackgroundColor="DarkGoldenrod">
+                                <Frame.GestureRecognizers>
+                                    <TapGestureRecognizer
+                                                 Command="{Binding SelectAdsripCommand}"/>
+                                </Frame.GestureRecognizers>
+
+                                <StackLayout 
+                                        VerticalOptions="FillAndExpand" 
+                                        HorizontalOptions="FillAndExpand">
+                                    <Label 
+                                        Text="{Binding Adscripcion}" 
+                                        VerticalOptions="Fill" 
+                                        FontFamily="Bold" 
+                                        TextColor="Black"  
+                                        FontSize="20" 
+                                        BackgroundColor="DarkGoldenrod" 
+                                        HorizontalOptions="Fill" 
+                                        HorizontalTextAlignment="Center"
+                                        />
+                                    <Label 
+                                        Text="{Binding Nombre, StringFormat=Nombre: \{0\}}" 
+                                        TranslationY="15" 
+                                        TextColor="White"  
+                                        FontSize="17" 
+                                        HorizontalOptions="Fill" 
+                                        HorizontalTextAlignment="Center"/>
+                                    <Label 
+                                        Text="{Binding Cargo, StringFormat=Cargo: \{0\}}"  
+                                        TranslationY="10" 
+                                        TextColor="White"  
+                                        FontSize="17" 
+                                        HorizontalOptions="Fill" 
+                                        HorizontalTextAlignment="Center"/>
+
+                                </StackLayout>
+                            </Frame>
+
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,120 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage 
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="DirecAct.Views.MenuPage"
+    BindingContext="{Binding Main, Source={StaticResource Locator}}"
+    BackgroundImage="menuwallpaper.png"
+    Title="Menu"
+    x:Name="Menu_Page">
+    <ContentPage.Content>
+
+        <StackLayout
+            x:Name="stacinitial"
+            Padding="5"
+            BindingContext="{Binding Menu}"
+            >
+
+            <StackLayout
+                x:Name="Stack_btns_menu"
+                Orientation="Horizontal"
+                VerticalOptions="Center"
+                Margin="10"
+                
+                    >
+                <Button
+                    Text="Areas"
+                    BackgroundColor="DarkGoldenrod"
+                    BorderRadius="23"
+                    Command="{Binding B_AreaCommand}"
+                    IsEnabled="{Binding IsEnableArea, Mode=TwoWay}"
+                    HeightRequest="46"
+                    HorizontalOptions="CenterAndExpand"
+                    TextColor="White"
+                    Scale="1.1"
+                >
+                </Button>
+
+                <Button
+                    Text="Nombres"
+                    BackgroundColor="DarkGoldenrod"
+                    BorderRadius="23"
+                    Command="{Binding B_NameCommand}"
+                    IsEnabled="{Binding IsEnableName, Mode=TwoWay}"
+                    HeightRequest="46"
+                    HorizontalOptions="CenterAndExpand"
+                    TextColor="White"
+                    Scale="1.1"
+                    >
+                </Button>
+
+                
+            </StackLayout>
+
+            <StackLayout
+                x:Name="btn_notify"
+                
+                Orientation="Horizontal"
+                VerticalOptions="Center"
+                Margin="15"
+                >
+
+                <Button
+                    Text="Historial de notificaciones"
+                    BackgroundColor="DarkGoldenrod"
+                    BorderRadius="23"
+                    Command="{Binding Notify_Command}"
+                    IsEnabled="{Binding IsEnableNotify, Mode=TwoWay}"
+                    HeightRequest="46"
+                    HorizontalOptions="CenterAndExpand"
+                    TextColor="White"
+                    Scale="1.2"
+                >
+
+                </Button>
+
+            </StackLayout>
+            
+            
+            <ActivityIndicator
+                TranslationY="170"
+                IsRunning="{Binding IsRunning, Mode=TwoWay}"
+                Color="DarkGoldenrod">
+            </ActivityIndicator>
+
+            
+            
+            <!--StackLayout     Se comento porque es el selector al servicio de notificaciones
+                Margin="10,0"
+                    Orientation="Horizontal"
+                VerticalOptions="CenterAndExpand"
+                    >
+                <Label
+                    Text="Selecciona tu carrera para recibir notificaciones"
+                    TextColor="Red"
+                    FontSize="Medium"
+                    TranslationY="40"
+                    IsVisible="{Binding IsVisibleLabelSelect, Mode=TwoWay}"
+                    >
+                </Label>
+                <Button
+                    x:Name="btn_register"
+                   HorizontalOptions="End"
+                    
+                    Image="falta2.png"
+                    BackgroundColor="Transparent"
+                    BorderRadius="23"
+                    Command="{Binding Group_Command}"
+                    IsEnabled="{Binding IsEnableSelect, Mode=TwoWay}"
+                    IsVisible="{Binding IsVisibleSelect, Mode=TwoWay}"
+                >
+
+                </Button>
+            </StackLayout-->
+            
+            
+
+        </StackLayout>
+
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage 
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="DirecAct.Views.ContactPage"
+    BindingContext="{Binding Main, Source={StaticResource Locator}}"
+    Title="Contacto"
+    BackgroundImage="indice.jpg">
+    <ContentPage.Content>
+        <ScrollView
+            BindingContext="{Binding Contact}">
+
+            <StackLayout>
+
+                <Image
+                    Source="{Binding Image_contact}"
+                    HeightRequest="210"
+                    WidthRequest="210"></Image>
+
+                <Label
+                    Text="{Binding Funcionario.Adscripcion}"
+                    BackgroundColor="DarkGoldenrod"
+                    TextColor="White"
+                    FontSize="Medium"
+                    VerticalOptions="Start" 
+                    HorizontalOptions="FillAndExpand"
+                    HorizontalTextAlignment="Center"
+                       />
+                <Label
+                    Text="{Binding Funcionario.Nombre}"
+                    TextColor="Black"
+                    FontSize="Medium"
+                    VerticalOptions="Start" 
+                    HorizontalOptions="Center" 
+                    HorizontalTextAlignment="Center"
+                       />
+                <Label 
+                    Text="{Binding Funcionario.Cargo, StringFormat=Cargo: \{0\}}"
+                    TextColor="Black"
+                    FontSize="Medium"
+                    VerticalOptions="Start" 
+                    HorizontalOptions="Center" 
+                    HorizontalTextAlignment="Center"/>
+
+                <Label 
+                    Text="{Binding Funcionario.Correo, StringFormat=Correo electrónico: \{0\}}"
+                    TextColor="Black"
+                    FontSize="Medium"
+                    VerticalOptions="Start" 
+                    HorizontalOptions="Center" 
+                    HorizontalTextAlignment="Center"/>
+
+                <Label 
+                    Text="{Binding Funcionario.Telefono, StringFormat=Teléfono: \{0\}}"
+                    TextColor="Black"
+                    FontSize="Medium"
+                    VerticalOptions="Start" 
+                    HorizontalOptions="Center" 
+                    HorizontalTextAlignment="Center"/>
+
+                <!--Label
+                    Text="{Binding Funcionario.Celular, StringFormat=Celular: \{0\}}"
+                    TextColor="Black"
+                    FontSize="Medium"
+                    VerticalOptions="Start" 
+                    HorizontalOptions="Center" 
+                    HorizontalTextAlignment="Center"/-->
+
+            </StackLayout>
+
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

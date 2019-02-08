@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage 
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="DirecAct.Views.NotifyPage"
+    BindingContext="{Binding Main, Source={StaticResource Locator}}"
+    Title="Historial de notificaciones"
+    BackgroundImage="indice.jpg">
+    <ContentPage.Content>
+        <StackLayout
+            BindingContext="{Binding Notify}">
+
+            <ListView
+                ItemsSource="{Binding Lista_completa}"
+                HasUnevenRows="true"
+                IsPullToRefreshEnabled="True"
+                IsRefreshing="{Binding IsRefreshing, Mode=TwoWay}"
+                RefreshCommand="{Binding RefreshCommand}"
+                >
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+
+                            <StackLayout>
+                                <Label
+                                    Text="{Binding Remitente, StringFormat=De: \{0\}}"
+                                    TextColor="Black"
+                                    FontSize="Medium"
+                                    VerticalOptions="Start" 
+                                    HorizontalOptions="Start" 
+                                    HorizontalTextAlignment="Start"></Label>
+                                
+                                <Label
+                                    Text="{Binding Texto, StringFormat=Notificación: \{0\}}"
+                                    TextColor="Black"
+                                    FontSize="Medium"
+                                    VerticalOptions="Start" 
+                                    HorizontalOptions="Start" 
+                                    HorizontalTextAlignment="Start">
+                                </Label>
+                                
+                                <Label
+                                    Text="{Binding Fecha, StringFormat=Fecha y hora: \{0\}}"
+                                    TextColor="Black"
+                                    FontSize="Small"
+                                    VerticalOptions="Start" 
+                                    HorizontalOptions="Center" 
+                                    HorizontalTextAlignment="Center">
+                                </Label>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+
+            </ListView>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

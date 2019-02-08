@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage 
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="DirecAct.Views.NamesPage"
+    BindingContext="{Binding Main, Source={StaticResource Locator}}"
+    Title="Nombres"
+    BackgroundColor="DarkGoldenrod">
+    <ContentPage.Content>
+        <StackLayout
+            BindingContext="{Binding Names}">
+
+            <SearchBar
+                Text="{Binding Filter}"
+                SearchCommand="{Binding SearchFunc}"
+                Placeholder="Búsqueda por nombre"
+                BackgroundColor="DarkGoldenrod"
+                HeightRequest="40"
+                PlaceholderColor="White"
+                CancelButtonColor="White"
+                TextColor="White"
+                       />
+
+            <ListView 
+                ItemsSource="{Binding Funcio_list}"
+                IsPullToRefreshEnabled="True"
+                IsRefreshing="{Binding IsRefreshing, Mode=TwoWay}"
+                RefreshCommand="{Binding RefreshCommand}"
+                BackgroundColor="DarkGoldenrod">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+
+                            <Frame
+                                BackgroundColor="DarkGoldenrod"
+                                >
+                                <Frame.GestureRecognizers>
+                                    <TapGestureRecognizer
+                                                 Command="{Binding SelectNameCommand}"/>
+                                </Frame.GestureRecognizers>
+
+                                <StackLayout 
+                                        VerticalOptions="FillAndExpand" 
+                                        HorizontalOptions="FillAndExpand">
+                                    <Label 
+                                            Text="{Binding Nombre}" 
+                                            TextColor="White"   
+                                            FontSize="Medium"  
+                                            HorizontalOptions="FillAndExpand" 
+                                            VerticalOptions="FillAndExpand" />
+
+                                </StackLayout>
+                            </Frame>
+
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage 
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="DirecAct.Views.HomePage"
+    BindingContext="{Binding Main, Source={StaticResource Locator}}"
+    BackgroundImage="homewallpaper.png"
+    Title="Inicio"
+    x:Name="Home_Page"
+    NavigationPage.HasNavigationBar="False">
+    <ContentPage.Content>
+        <StackLayout
+            Padding="5"
+            BindingContext="{Binding Home}">
+            <!--Label Text="Directorio Acatlán´."
+                TextColor="White"
+                HorizontalOptions="CenterAndExpand" /-->
+
+            <Button
+                    Text="Iniciar"
+                    BackgroundColor="DarkGoldenrod"
+                    BorderRadius="8"
+                    Command="{Binding Menu_Command}"
+                    IsEnabled="{Binding IsEnableHome, Mode=TwoWay}"
+                    HeightRequest="46"
+                    VerticalOptions="CenterAndExpand"
+                    HorizontalOptions="CenterAndExpand"
+                    TranslationY="100"
+                    TextColor="White"
+                    Scale="1.2"
+                    >
+            </Button>
+
+            <Button
+                    Text="Carrera"
+                    BackgroundColor="DarkGoldenrod"
+                    BorderRadius="30"
+                    Command="{Binding RegisterC_Command}"
+                    IsEnabled="{Binding IsEnableCarrera, Mode=TwoWay}"
+                    IsVisible="{Binding IsVisibleCarrera, Mode=TwoWay}"
+                    HeightRequest="46"
+                    VerticalOptions="CenterAndExpand"
+                    HorizontalOptions="CenterAndExpand"
+                    TranslationY="10"
+                    TextColor="White"
+                    Scale="1.3"
+                    >
+            </Button>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
